@@ -2,39 +2,97 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Links Úteis</title>
+  <title>Links Úteis | GPP-39</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Fonte -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <div class="background-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
   <div class="container">
 
     <header class="header">
+      <div class="header-icon">
+        <i class="fas fa-link"></i>
+      </div>
       <h1>Links Úteis</h1>
-      <span>GPP - 39</span>
+      <span class="badge">GPP - 39</span>
     </header>
 
     <section class="links">
-      <a href="https://gaedsonjunior-sudo.github.io/semestoque/" target="_blank">Produtos Sem Estoque</a>
-      <a href="https://gaedsonjunior-sudo.github.io/regraumterco/" target="_blank">Verificar Validade no Recebimento</a>
+      <a href="https://gaedsonjunior-sudo.github.io/semestoque/" target="_blank" class="link-card">
+        <div class="link-icon">
+          <i class="fas fa-box-open"></i>
+        </div>
+        <div class="link-content">
+          <h3>Produtos Sem Estoque</h3>
+          <p>Consultar produtos indisponíveis</p>
+        </div>
+        <i class="fas fa-arrow-right link-arrow"></i>
+      </a>
+      
+      <a href="https://gaedsonjunior-sudo.github.io/regraumterco/" target="_blank" class="link-card">
+        <div class="link-icon">
+          <i class="fas fa-calendar-check"></i>
+        </div>
+        <div class="link-content">
+          <h3>Verificar Validade</h3>
+          <p>Validar produtos no recebimento</p>
+        </div>
+        <i class="fas fa-arrow-right link-arrow"></i>
+      </a>
     </section>
 
     <section class="gallery">
-      <div class="card">
-        <img src="images/escala.jpg" alt="Escala">
-        <p>Escala</p>
-      </div>
+      <h2 class="section-title">
+        <i class="fas fa-images"></i>
+        Recursos Visuais
+      </h2>
+      
+      <div class="gallery-grid">
+        <div class="card">
+          <div class="card-image">
+            <img src="images/escala.jpg" alt="Escala">
+            <div class="card-overlay">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>Escala</h3>
+            <p>Visualizar programação</p>
+          </div>
+        </div>
 
-      <div class="card">
-        <img src="images/inventario.jpg" 
-        <p>Calendário de Inventários</p>
+        <div class="card">
+          <div class="card-image">
+            <img src="images/inventario.jpg" alt="Calendário de Inventários">
+            <div class="card-overlay">
+              <i class="fas fa-clipboard-list"></i>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>Calendário de Inventários</h3>
+            <p>Acompanhar inventários</p>
+          </div>
+        </div>
       </div>
     </section>
+
+    <footer class="footer">
+      <p>© 2025 GPP-39 • Feito com <i class="fas fa-heart"></i></p>
+    </footer>
 
   </div>
 
