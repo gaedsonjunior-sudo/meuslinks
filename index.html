@@ -295,11 +295,9 @@
   function badge(month, day) {
     if (month === cm && day === cd) return '<span class="birthday-badge today">🎉 Hoje!</span>';
     if (month === cm) return '<span class="birthday-badge">Este Mês</span>';
-    const yr = today.getFullYear();
-    let next = new Date(yr, month - 1, day);
-    if (next < today) next = new Date(yr + 1, month - 1, day);
-    const d = Math.ceil((next - today) / 86400000);
-    if (d <= 31) return `<span class="birthday-badge next">Mês que vem</span>`;
+    // próximo mês (com virada de ano: dezembro → janeiro)
+    const nextMonth = cm === 12 ? 1 : cm + 1;
+    if (month === nextMonth) return '<span class="birthday-badge next">Mês que vem</span>';
     return '';
   }
 
