@@ -2,193 +2,372 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Links Úteis | GPP-39</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Fonte -->
+  <title>GPP-39</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-  <link rel="stylesheet" href="style.css" />
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f2f4f8;
+      color: #1a1f36;
+      min-height: 100vh;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .app { display: flex; flex-direction: column; min-height: 100vh; }
+
+    /* HEADER */
+    .header {
+      background: #fff;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid #eef0f5;
+    }
+
+    .header-left { display: flex; align-items: center; gap: 12px; }
+
+    .app-logo {
+      width: 40px; height: 40px;
+      background: #2563eb;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .app-logo i { color: #fff; font-size: 18px; }
+    .app-title { font-size: 18px; font-weight: 700; color: #1a1f36; }
+
+    .header-bell {
+      width: 38px; height: 38px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; background: #f2f4f8; cursor: pointer;
+    }
+
+    .header-bell i { font-size: 17px; color: #64748b; }
+
+    /* CONTENT */
+    .content { flex: 1; padding: 20px 16px 100px; }
+
+    /* SEARCH */
+    .search-bar {
+      display: flex; align-items: center; gap: 10px;
+      background: #fff; border: 1.5px solid #eef0f5;
+      border-radius: 14px; padding: 12px 16px; margin-bottom: 28px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+
+    .search-bar i { font-size: 15px; color: #94a3b8; }
+    .search-bar input {
+      border: none; outline: none; font-size: 14px;
+      color: #64748b; background: transparent; width: 100%;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* SECTION TITLE */
+    .section-title {
+      font-size: 11px; font-weight: 700; letter-spacing: 1.1px;
+      text-transform: uppercase; color: #94a3b8; margin-bottom: 14px;
+    }
+
+    /* QUICK ACTIONS */
+    .quick-actions { margin-bottom: 28px; }
+
+    .qa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+
+    .qa-card {
+      background: #fff; border-radius: 16px; padding: 18px 16px;
+      text-decoration: none; color: inherit; display: block;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      border: 1.5px solid #f1f3f9;
+      transition: transform 0.15s;
+    }
+
+    .qa-card:active { transform: scale(0.96); }
+
+    .qa-icon {
+      width: 44px; height: 44px; background: #eff4ff;
+      border-radius: 12px; display: flex; align-items: center;
+      justify-content: center; margin-bottom: 12px;
+    }
+
+    .qa-icon i { font-size: 20px; color: #2563eb; }
+    .qa-card h3 { font-size: 14px; font-weight: 700; color: #1a1f36; margin-bottom: 3px; }
+    .qa-card .qa-sub { font-size: 12px; font-weight: 500; color: #ef4444; }
+    .qa-card .qa-sub.blue { color: #2563eb; }
+
+    .qa-wide {
+      background: #fff; border-radius: 16px; padding: 16px 18px;
+      text-decoration: none; color: inherit; display: flex;
+      align-items: center; gap: 14px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      border: 1.5px solid #f1f3f9; transition: transform 0.15s;
+    }
+
+    .qa-wide:active { transform: scale(0.98); }
+
+    .qa-wide-icon {
+      width: 44px; height: 44px; background: #eff4ff; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+
+    .qa-wide-icon i { font-size: 20px; color: #2563eb; }
+    .qa-wide-text { flex: 1; }
+    .qa-wide-text h3 { font-size: 14px; font-weight: 700; color: #1a1f36; margin-bottom: 2px; }
+    .qa-wide-text p { font-size: 12px; color: #94a3b8; }
+    .qa-wide-arrow { color: #cbd5e1; font-size: 14px; }
+
+    /* GALLERY */
+    .gallery-section { margin-bottom: 28px; }
+
+    .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+
+    .gallery-card {
+      border-radius: 16px; overflow: hidden;
+      text-decoration: none; color: #fff; display: block;
+      position: relative; height: 140px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      transition: transform 0.15s;
+    }
+
+    .gallery-card:active { transform: scale(0.96); }
+
+    .gallery-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .gallery-card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.05) 60%, transparent 100%);
+    }
+
+    .gallery-card-label {
+      position: absolute; bottom: 10px; left: 12px;
+      font-size: 14px; font-weight: 700;
+    }
+
+    .gallery-wide {
+      border-radius: 16px; overflow: hidden;
+      text-decoration: none; color: #fff; display: block;
+      position: relative; height: 110px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12); transition: transform 0.15s;
+    }
+
+    .gallery-wide:active { transform: scale(0.98); }
+    .gallery-wide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .gallery-wide .gallery-card-sub {
+      position: absolute; bottom: 10px; right: 12px;
+      font-size: 11px; color: rgba(255,255,255,0.75);
+    }
+
+    /* BIRTHDAYS */
+    .birthdays-section { margin-bottom: 28px; }
+
+    .birthdays-card {
+      background: #fff; border-radius: 20px; padding: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05); border: 1.5px solid #f1f3f9;
+    }
+
+    .birthdays-header {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;
+    }
+
+    .birthdays-header-title {
+      font-size: 11px; font-weight: 700; letter-spacing: 1.1px;
+      text-transform: uppercase; color: #94a3b8;
+    }
+
+    .birthdays-header-icon {
+      width: 34px; height: 34px; background: #eff4ff;
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    }
+
+    .birthdays-header-icon i { color: #2563eb; font-size: 16px; }
+
+    .birthday-row {
+      display: flex; align-items: center; gap: 14px;
+      padding: 10px 0; border-bottom: 1px solid #f8fafc;
+    }
+
+    .birthday-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .birthday-row:first-child { padding-top: 0; }
+
+    .birthday-avatar {
+      width: 46px; height: 46px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 16px; font-weight: 700; overflow: hidden;
+    }
+
+    .birthday-info { flex: 1; }
+    .birthday-info h3 { font-size: 15px; font-weight: 600; color: #1a1f36; }
+    .birthday-info p { font-size: 12px; color: #94a3b8; margin-top: 2px; }
+
+    .birthday-badge {
+      background: #eff4ff; color: #2563eb; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.5px; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 100px; white-space: nowrap;
+    }
+
+    .birthday-badge.today { background: #fef9c3; color: #b45309; }
+
+    /* BOTTOM NAV */
+    .bottom-nav {
+      position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 100%; max-width: 480px; background: #fff;
+      border-top: 1px solid #eef0f5;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      padding: 10px 0 20px; z-index: 50;
+    }
+
+    .nav-item {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 4px; cursor: pointer;
+    }
+
+    .nav-item i { font-size: 20px; color: #cbd5e1; }
+    .nav-item span { font-size: 10px; font-weight: 500; color: #94a3b8; }
+    .nav-item.active i { color: #2563eb; }
+    .nav-item.active span { color: #2563eb; }
+  </style>
 </head>
 <body>
+<div class="app">
 
-  <div class="background-shapes">
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-    <div class="shape shape-3"></div>
+  <div class="header">
+    <div class="header-left">
+      <div class="app-logo"><i class="fas fa-th"></i></div>
+      <span class="app-title">GPP-39</span>
+    </div>
+    <div class="header-bell"><i class="fas fa-bell"></i></div>
   </div>
 
-  <div class="container">
+  <div class="content">
 
-    <header class="header">
-      <div class="header-icon">
-        <i class="fas fa-magnifying-glass-chart"></i>
+    <div class="search-bar">
+      <i class="fas fa-magnifying-glass"></i>
+      <input type="text" placeholder="Pesquisar no GPP-39..." readonly>
+    </div>
+
+    <div class="quick-actions">
+      <div class="section-title">Ações Rápidas</div>
+      <div class="qa-grid">
+        <a href="https://gaedsonjunior-sudo.github.io/semestoque/" target="_blank" class="qa-card">
+          <div class="qa-icon"><i class="fas fa-arrow-right-arrow-left"></i></div>
+          <h3>Transferências</h3>
+          <span class="qa-sub">Sem estoque</span>
+        </a>
+        <a href="https://gaedsonjunior-sudo.github.io/controle-recebimento/" target="_blank" class="qa-card">
+          <div class="qa-icon"><i class="fas fa-file-lines"></i></div>
+          <h3>Notas</h3>
+          <span class="qa-sub blue">No Recebimento</span>
+        </a>
       </div>
-      
-      <span class="badge">GPP - 39</span>
-    </header>
+      <a href="https://gaedsonjunior-sudo.github.io/regraumterco/" target="_blank" class="qa-wide">
+        <div class="qa-wide-icon"><i class="fas fa-calendar-check"></i></div>
+        <div class="qa-wide-text">
+          <h3>Validade</h3>
+          <p>Verificar pendências</p>
+        </div>
+        <i class="fas fa-chevron-right qa-wide-arrow"></i>
+      </a>
+    </div>
 
-    <section class="links">
-      <a href="https://gaedsonjunior-sudo.github.io/semestoque/" target="_blank" class="link-card">
-        <div class="link-icon">
-          <i class="fas fa-box-open"></i>
-        </div>
-        <div class="link-content">
-          <h3>Transferências Sem Estoque</h3>
-          <p>Produtos de transferência que estão sem estoque</p>
-        </div>
-        <i class="fas fa-arrow-right link-arrow"></i>
-      </a>
-      
-      <a href="https://gaedsonjunior-sudo.github.io/controle-recebimento/" target="_blank" class="link-card">
-        <div class="link-icon">
-          <i class="fas fa-file-invoice"></i>
-        </div>
-        <div class="link-content">
-          <h3>Controle de Notas Fiscais no Recebimento</h3>
-          <p>Informações sobre os fornecedores recebidos</p>
-        </div>
-        <i class="fas fa-arrow-right link-arrow"></i>
-      </a>
-      
-      <a href="https://gaedsonjunior-sudo.github.io/regraumterco/" target="_blank" class="link-card">
-        <div class="link-icon">
-          <i class="fas fa-calendar-check"></i>
-        </div>
-        <div class="link-content">
-          <h3>Verificar Validade no Recebimento</h3>
-          <p>Regra de 1/3 de vencimento para recebimento</p>
-        </div>
-        <i class="fas fa-arrow-right link-arrow"></i>
-      </a>
-    </section>
-
-    <section class="gallery">
+    <div class="gallery-section">
+      <div class="section-title">Escalas e Inventários</div>
       <div class="gallery-grid">
-        <a href="images/escala.jpg" target="_blank" class="card">
-          <div class="card-image">
-            <img src="images/escala.jpg" alt="Escala">
-            <div class="card-overlay">
-              <i class="fas fa-search-plus"></i>
-            </div>
-          </div>
-          <div class="card-content">
-            <h3>Escala</h3>
-            <p class="click-hint">Clique para ampliar</p>
-          </div>
+        <a href="images/escala.jpg" target="_blank" class="gallery-card">
+          <img src="images/escala.jpg" alt="Escala" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#f97316,#fb923c)'">
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-label">Escala</span>
         </a>
-
-        <a href="images/inventario.jpg" target="_blank" class="card">
-          <div class="card-image">
-            <img src="images/inventario.jpg" alt="Calendário de Inventários">
-            <div class="card-overlay">
-              <i class="fas fa-search-plus"></i>
-            </div>
-          </div>
-          <div class="card-content">
-            <h3>Calendário de Inventários</h3>
-            <p class="click-hint">Clique para ampliar</p>
-          </div>
+        <a href="images/inventario.jpg" target="_blank" class="gallery-card">
+          <img src="images/inventario.jpg" alt="Inventários" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#475569,#64748b)'">
+          <div class="gallery-card-overlay"></div>
+          <span class="gallery-card-label">Inventários</span>
         </a>
-
-        <a href="images/férias.jpg" target="_blank" class="card">
-          <div class="card-image">
-            <img src="images/férias.jpg" alt="Calendário de Férias">
-            <div class="card-overlay">
-              <i class="fas fa-search-plus"></i>
-            </div>
-          </div>
-          <div class="card-content">
-            <h3>Calendário de Férias</h3>
-            <p class="click-hint">Clique para ampliar</p>
-          </div>
-        </a>
-        
       </div>
-    </section>
+      <a href="images/férias.jpg" target="_blank" class="gallery-wide">
+        <img src="images/férias.jpg" alt="Férias" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0284c7,#38bdf8)'">
+        <div class="gallery-card-overlay"></div>
+        <span class="gallery-card-label">Calendário de Férias</span>
+        <span class="gallery-card-sub">Clique para ampliar</span>
+      </a>
+    </div>
 
-    <section class="birthdays">
-      <h2 class="section-title">
-        <i class="fas fa-birthday-cake"></i>
-        Aniversários da Equipe
-      </h2>
-
-      <div class="birthdays-grid">
-        <div class="birthday-card">
-          <div class="birthday-icon">
-            <i class="fas fa-cake-candles"></i>
-          </div>
-          <div class="birthday-info">
-            <h3>Rogério</h3>
-            <p><i class="fas fa-calendar-day"></i> 28 de Março</p>
-          </div>
+    <div class="birthdays-section">
+      <div class="birthdays-card">
+        <div class="birthdays-header">
+          <span class="birthdays-header-title">Aniversariantes do Time</span>
+          <div class="birthdays-header-icon"><i class="fas fa-cake-candles"></i></div>
         </div>
-
-        <div class="birthday-card">
-          <div class="birthday-icon">
-            <i class="fas fa-cake-candles"></i>
-          </div>
-          <div class="birthday-info">
-            <h3>Jonathan</h3>
-            <p><i class="fas fa-calendar-day"></i> 27 de Julho</p>
-          </div>
-        </div>
-
-        <div class="birthday-card">
-          <div class="birthday-icon">
-            <i class="fas fa-cake-candles"></i>
-          </div>
-          <div class="birthday-info">
-            <h3>Vinicius</h3>
-            <p><i class="fas fa-calendar-day"></i> 26 de Agosto</p>
-          </div>
-        </div>
-
-        <div class="birthday-card">
-          <div class="birthday-icon">
-            <i class="fas fa-cake-candles"></i>
-          </div>
-          <div class="birthday-info">
-            <h3>Jefferson</h3>
-            <p><i class="fas fa-calendar-day"></i> 22 de Setembro</p>
-          </div>
-        </div>
-
-        <div class="birthday-card">
-          <div class="birthday-icon">
-            <i class="fas fa-cake-candles"></i>
-          </div>
-          <div class="birthday-info">
-            <h3>Celso</h3>
-            <p><i class="fas fa-calendar-day"></i> 04 de Novembro</p>
-          </div>
-        </div>
-
-        <div class="birthday-card">
-          <div class="birthday-icon">
-            <i class="fas fa-cake-candles"></i>
-          </div>
-          <div class="birthday-info">
-            <h3>Edson</h3>
-            <p><i class="fas fa-calendar-day"></i> 22 de Dezembro</p>
-          </div>
-        </div>
+        <div id="birthdaysList"></div>
       </div>
-    </section>
-
-    <footer class="footer">
-      <p>© 2026 GPP-39 • Cristo Vive!</i></p>
-    </footer>
+    </div>
 
   </div>
 
+  <nav class="bottom-nav">
+    <div class="nav-item active">
+      <i class="fas fa-house"></i><span>Início</span>
+    </div>
+    <div class="nav-item">
+      <i class="fas fa-list-check"></i><span>Tarefas</span>
+    </div>
+    <div class="nav-item">
+      <i class="fas fa-calendar"></i><span>Calendário</span>
+    </div>
+    <div class="nav-item">
+      <i class="fas fa-circle-user"></i><span>Perfil</span>
+    </div>
+  </nav>
+
+</div>
+
+<script>
+  const members = [
+    { name: 'Rogério',   month: 3,  day: 28 },
+    { name: 'Jonathan',  month: 7,  day: 27 },
+    { name: 'Vinicius',  month: 8,  day: 26 },
+    { name: 'Jefferson', month: 9,  day: 22 },
+    { name: 'Celso',     month: 11, day: 4  },
+    { name: 'Edson',     month: 12, day: 22 },
+  ];
+
+  const monthNames = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+  const colors = ['#dbeafe','#dcfce7','#fce7f3','#fef9c3','#e0e7ff','#ffedd5'];
+  const textColors = ['#2563eb','#16a34a','#db2777','#b45309','#4f46e5','#ea580c'];
+
+  const today = new Date();
+  const cm = today.getMonth() + 1;
+  const cd = today.getDate();
+
+  function badge(month, day) {
+    if (month === cm && day === cd) return '<span class="birthday-badge today">🎉 Hoje!</span>';
+    if (month === cm) return '<span class="birthday-badge">Este Mês</span>';
+    const yr = today.getFullYear();
+    let next = new Date(yr, month - 1, day);
+    if (next < today) next = new Date(yr + 1, month - 1, day);
+    const d = Math.ceil((next - today) / 86400000);
+    if (d <= 14) return `<span class="birthday-badge">Em ${d}d</span>`;
+    return '';
+  }
+
+  document.getElementById('birthdaysList').innerHTML = members.map((m, i) => `
+    <div class="birthday-row">
+      <div class="birthday-avatar" style="background:${colors[i]};color:${textColors[i]}">${m.name[0]}</div>
+      <div class="birthday-info">
+        <h3>${m.name}</h3>
+        <p>${m.day} de ${monthNames[m.month - 1]}</p>
+      </div>
+      ${badge(m.month, m.day)}
+    </div>
+  `).join('');
+</script>
 </body>
 </html>
-
-
-
-
-
