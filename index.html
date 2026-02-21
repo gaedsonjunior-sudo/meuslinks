@@ -1,237 +1,194 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Links Úteis | GPP-39</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<html lang="pt-BR"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>GPP-39 Dashboard</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#135bec",
-                        "background-light": "#f6f6f8",
-                        "background-dark": "#101622",
-                    },
-                    fontFamily: {
-                        "display": ["Inter", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
-            },
-        }
-    </script>
-<style>
-        body {
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen pb-24">
-<!-- Header Section -->
-<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 px-4 py-3">
-<div class="flex items-center justify-between max-w-md mx-auto">
-<div class="flex items-center gap-3">
-<div class="bg-primary p-2 rounded-lg text-white">
-<span class="material-symbols-outlined text-2xl">dashboard</span>
-</div>
-<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">GPP-39</h1>
-</div>
-<button class="p-2 text-slate-600 dark:text-slate-400">
-<span class="material-symbols-outlined">notifications</span>
-</button>
-</div>
-</header>
-<main class="max-w-md mx-auto px-4 pt-4 space-y-6">
-<!-- Search Bar -->
-<div class="relative">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
-<input class="w-full bg-white dark:bg-slate-800 border-none rounded-xl py-3 pl-10 pr-4 shadow-sm focus:ring-2 focus:ring-primary/20 text-sm font-display" placeholder="Pesquisar no GPP-39..." type="text"/>
-</div>
-<!-- Quick Actions Section -->
-<section>
-<h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3 px-1">Ações Rápidas</h3>
-<div class="grid grid-cols-2 gap-3">
-<button class="flex flex-col items-start p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-transparent hover:border-primary/30 transition-all text-left group">
-<div class="bg-primary/10 text-primary p-2 rounded-lg mb-3 group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-symbols-outlined">swap_horiz</span>
-</div>
-<span class="font-bold text-slate-800 dark:text-slate-100 text-sm">Transferências</span>
-<span class="text-xs text-red-500 font-medium mt-1">Sem estoque</span>
-</button>
-<button class="flex flex-col items-start p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-transparent hover:border-primary/30 transition-all text-left group">
-<div class="bg-primary/10 text-primary p-2 rounded-lg mb-3 group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-symbols-outlined">description</span>
-</div>
-<span class="font-bold text-slate-800 dark:text-slate-100 text-sm">Notas</span>
-<span class="text-xs text-primary font-medium mt-1">No Recebimento</span>
-</button>
-<button class="col-span-2 flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-transparent hover:border-primary/30 transition-all group">
-<div class="flex items-center gap-3">
-<div class="bg-primary/10 text-primary p-2 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-symbols-outlined">event_upcoming</span>
-</div>
-<div>
-<p class="font-bold text-slate-800 dark:text-slate-100 text-sm">Validade</p>
-<p class="text-xs text-slate-500">Verificar pendências</p>
-</div>
-</div>
-<span class="material-symbols-outlined text-slate-400">chevron_right</span>
-</button>
-</div>
-</section>
-<!-- Calendars/Scales Section -->
-<section>
-<h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3 px-1">Escalas e Inventários</h3>
-<div class="flex gap-4 overflow-x-auto pb-4 hide-scrollbar snap-x">
-<!-- Card 1: Escala -->
-<div class="min-w-[200px] snap-start bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm">
-<div class="h-28 bg-slate-200 relative">
-<img alt="Calendário de escala de trabalho" class="w-full h-full object-cover" data-alt="Close up of a business calendar planner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKiu_E4JOeM0AqKyPLKvZN22KHUojlEoMq3Y-TBuUFLB1rWKAt08wq_3GjKjt_uNdkX7zgAhi30Le4RM6J_2NYmjdPYD6vYbZAbXtl9HZvfkQfsI3-4sgyMj0pD37mKSTm_N00pDrk6MlCCwhUbLHBtmyjlMLD9yWQoqOU-bIqedMrzEF4tFm4pusA8KIRin5PlcLjPnMf6yhsWO3C1N0LdS_PmEvOeUbeNCnci3-w1JqOAwdS-mLHqHFkwLvBqLDWf4F9iZJsB0Mp"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-<span class="absolute bottom-2 left-3 text-white font-bold text-sm">Escala</span>
-</div>
-<div class="p-3">
-<p class="text-xs text-slate-500 line-clamp-1">Escala de março atualizada</p>
-</div>
-</div>
-<!-- Card 2: Inventários -->
-<div class="min-w-[200px] snap-start bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm">
-<div class="h-28 bg-slate-200 relative">
-<img alt="Armazém organizado" class="w-full h-full object-cover" data-alt="Organized modern logistics warehouse interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsbNFGi4-lCDu0q7IrAEwtNPnXl_i34lMfMpCx2BOu0-vP_vXZXlmgVRP2j7d6STS_x2EZAy6WzUqDntJL5rUvtqWvLOvsFvjb3PhxKAfe51v3v893fgw_rw9gPSyRgvaEnzFKY4Pga6SqGDxiwSTomZap5wIwlsPkHE-cuZXnHHtrHkHO_1PpcTZk0iMYXciKvEBqERmV0gmx7A5XTK_OQjJ-0MJYKpG0NBdb0Y3HHqX4bnrQWjU7Qvusf83PSvc77CYSR32PLYk8"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-<span class="absolute bottom-2 left-3 text-white font-bold text-sm">Inventários</span>
-</div>
-<div class="p-3">
-<p class="text-xs text-slate-500 line-clamp-1">Próximo: 15 de Abril</p>
-</div>
-</div>
-<!-- Card 3: Férias -->
-<div class="min-w-[200px] snap-start bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm">
-<div class="h-28 bg-slate-200 relative">
-<img alt="Praia ensolarada" class="w-full h-full object-cover" data-alt="Sunny tropical beach with blue water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5nvQC7Rto8UaAs01RAB6PMVq-f9A1yv94bfNEuVozNf24aAbI8iYnYG5EArVv3fi1BYJinKlb_waSeB0BuWsHmqqC8__atRuEaEf-jNHuQurCqUKxvTIPKd2b5M48LTviBusHVq-_cCTIv9om2CBBdQnEDdcJhL1JFjBYD5r6OlAYoDJ3VyIn1U5AyPXn2PrFnY8GhOgDH8r2nMslkYbWam2wjId-WDuYtKNjxNW24_bwbwp0ad6hCqknJrZBBx_uGEDquji0P0-Q"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-<span class="absolute bottom-2 left-3 text-white font-bold text-sm">Férias</span>
-</div>
-<div class="p-3">
-<p class="text-xs text-slate-500 line-clamp-1">Escala de folgas anual</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Team Birthdays Section -->
-<section class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-primary/5">
-<div class="flex items-center justify-between mb-5">
-<h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Aniversariantes do Time</h3>
-<span class="material-symbols-outlined text-primary">cake</span>
-</div>
-<div class="space-y-4">
-<!-- Rogério -->
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="size-10 rounded-full border-2 border-primary/20 p-0.5 overflow-hidden">
-<img alt="Avatar Rogério" class="size-full rounded-full object-cover" data-alt="Professional portrait of a middle aged man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-eDR__DhausByqSTNZHTHiqxEsrP1QZ6458N6k-4MyVMJaTzm8JFKkhBsSd-qU7gT4o-LEKvk89wHYVghNyxCbSBAMVAMI6O-A8JfatvMLYwU51LqYr1ppUv9prkAOMc3oW6gNVdQk-xKfyOUaZxjdbLGx-cvRAlriXx7Z2dR1l5CDGAV38px3hw8HH_2F-PqwrtDHdSI7tmRVeA2JvDcQ-ZbJtXI4penbu7BtGOgAQZS8bjy4TI02fU9FP2OltUq-Yds6h0fAcLq"/>
-</div>
-<div>
-<p class="text-sm font-bold text-slate-800 dark:text-slate-200">Rogério</p>
-<p class="text-xs text-slate-500">28 de Março</p>
-</div>
-</div>
-<div class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded-full uppercase">Este Mês</div>
-</div>
-<!-- Jonathan -->
-<div class="flex items-center gap-3">
-<div class="size-10 rounded-full border-2 border-slate-100 p-0.5 overflow-hidden">
-<img alt="Avatar Jonathan" class="size-full rounded-full object-cover" data-alt="Portrait of a young smiling man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBnDQhdv2knt12CCRW80BxPBdYmeejnHPaSqxQ7JM04_-QVf1NB8ZZOB8M39AMgG39wEHhayDMD8rmNsMvoHrccBL7BleWQk4VNTEScCCpT38jmicNzeDodCbdRysMRVbw8WqZBL72Sd8ixJGKY2ruM9vJnb8nhCpMopgcgmEfLWasKF-7Wn7HDDvvz0fwEFPuzevDw7kD1WzgUBD8Mhc_qFmaQzaTQXpM9QJduUZWio8JkSSHPQSHOaxTUWkH9zOQaysNXqRPcEJA"/>
-</div>
-<div>
-<p class="text-sm font-bold text-slate-800 dark:text-slate-200">Jonathan</p>
-<p class="text-xs text-slate-500">27 de Julho</p>
-</div>
-</div>
-<!-- Vinicius -->
-<div class="flex items-center gap-3">
-<div class="size-10 rounded-full border-2 border-slate-100 p-0.5 overflow-hidden">
-<img alt="Avatar Vinicius" class="size-full rounded-full object-cover" data-alt="Portrait of a man with glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqV_4kL54e_GEiktiAMx5fmUxbP2pxAtcN9wPJTh_CKrCqrS47PTDFytEwWazQK5CkkRSeVS4Jope9KUFKJniAVkBIc_2a6bzCNJLdFyvz1PtiyTcIU8eLXOwVv6IF3aAPEwT7w52pPHZgw_5Zf21UR-c8uZ3Bi9E2Ur9Rfw5KUub4UrPTugHQUMsaETNCf4gk26mYOoTVvbRyRc7uM1oYwOtdZKgA7Cxtxv5AyPK_cwo-PVX8Xk6ev0oQZa5Fau66bGny94Y-gQ_Q"/>
-</div>
-<div>
-<p class="text-sm font-bold text-slate-800 dark:text-slate-200">Vinicius</p>
-<p class="text-xs text-slate-500">26 de Agosto</p>
-</div>
-</div>
-<!-- Jefferson -->
-<div class="flex items-center gap-3">
-<div class="size-10 rounded-full border-2 border-slate-100 p-0.5 overflow-hidden">
-<img alt="Avatar Jefferson" class="size-full rounded-full object-cover" data-alt="Man in business casual attire smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZqDsA-HBayGAsR85zTig0pDRDnKEzFSAQqlHFkMzzWWdjgZL_4SSD0HeDYLxILV49qXSRo4xsZRAkoRYSFF9FBCg4DgKhoQoIxZACLs1jkolEYIFUYlFVG5rtEQD6kokxsZNlrr13sSvdkhYUxaazc7-tdy62RFpL6yuvSztCNSVtCsgl1Tgg3FxHHkuSEVIUOX3ZEGs40b0NDuLRjos2PXcSmj1rMQN-PA6WAFFKk_BqhMGBzSkIhq4MDL3IxnZx68tHnjt1Lmt-"/>
-</div>
-<div>
-<p class="text-sm font-bold text-slate-800 dark:text-slate-200">Jefferson</p>
-<p class="text-xs text-slate-500">22 de Setembro</p>
-</div>
-</div>
-<!-- Celso -->
-<div class="flex items-center gap-3">
-<div class="size-10 rounded-full border-2 border-slate-100 p-0.5 overflow-hidden">
-<img alt="Avatar Celso" class="size-full rounded-full object-cover" data-alt="Portrait of a mature man outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHDG5kZQo-CPjx-6bXrNEmwOMhWOdlXgXw584waNb14pGyep3svLDaY8yLk3EICy_uQb-CARufOCsgDOf_igjNp-a5P8NQimuMrxM_A08AJLZL9sRMf4KFoRscb6S5o22L6PhMT3Wk8v3lmChAnLTWLiZRDE2OFuLsOTQx4sBPd07PLBdT2G2gAui7l2BfoQjXFI-kDnzc5D0Xtvz3s3Pqrm7Zh82Bn8eGjcHxu0uzn2gF7AkR4e7OiKi76OGOYTeTbLPeICIzwvBJ"/>
-</div>
-<div>
-<p class="text-sm font-bold text-slate-800 dark:text-slate-200">Celso</p>
-<p class="text-xs text-slate-500">04 de Novembro</p>
-</div>
-</div>
-<!-- Edson -->
-<div class="flex items-center gap-3">
-<div class="size-10 rounded-full border-2 border-slate-100 p-0.5 overflow-hidden">
-<img alt="Avatar Edson" class="size-full rounded-full object-cover" data-alt="Professional executive man portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-1LzJan9b8MQqsfuyaDyg2ZjFIGMpVzaMkxoVGhIfW_fHPYRbuE_NvoggLcHgztwUOw1AOlI5FJGTArAEiSp8sh6tVwY3FrEf2TIoZ840FeKpHrZ7NAN01NR1DSsR9LCXjBW6WVVpiCvH2v866-C8VPMx-B4QHuXiJUs-fSVh0uwZzgXszqqzrV3eKCo1SzoeU2ySdnfi5do0tTEXcMWB6lcyL0gT4AzVjaN5GAcFop8Ls_jxFRLDM59-WLLYsK83IOJoL4BHmt6W"/>
-</div>
-<div>
-<p class="text-sm font-bold text-slate-800 dark:text-slate-200">Edson</p>
-<p class="text-xs text-slate-500">22 de Dezembro</p>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Bottom Navigation Bar -->
-<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 px-6 py-3 flex justify-between items-center z-50">
-<a class="flex flex-col items-center gap-1 text-primary" href="#">
-<span class="material-symbols-outlined fill-1">home</span>
-<span class="text-[10px] font-bold">Início</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
-<span class="material-symbols-outlined">format_list_bulleted</span>
-<span class="text-[10px] font-medium">Tarefas</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
-<span class="material-symbols-outlined">calendar_month</span>
-<span class="text-[10px] font-medium">Calendário</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
-<span class="material-symbols-outlined">account_circle</span>
-<span class="text-[10px] font-medium">Perfil</span>
-</a>
-</nav>
-</body></html>
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="background-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <div class="container">
+
+    <header class="header">
+      <div class="header-icon">
+        <i class="fas fa-magnifying-glass-chart"></i>
+      </div>
+      
+      <span class="badge">GPP - 39</span>
+    </header>
+
+    <section class="links">
+      <a href="https://gaedsonjunior-sudo.github.io/semestoque/" target="_blank" class="link-card">
+        <div class="link-icon">
+          <i class="fas fa-box-open"></i>
+        </div>
+        <div class="link-content">
+          <h3>Transferências Sem Estoque</h3>
+          <p>Produtos de transferência que estão sem estoque</p>
+        </div>
+        <i class="fas fa-arrow-right link-arrow"></i>
+      </a>
+      
+      <a href="https://gaedsonjunior-sudo.github.io/controle-recebimento/" target="_blank" class="link-card">
+        <div class="link-icon">
+          <i class="fas fa-file-invoice"></i>
+        </div>
+        <div class="link-content">
+          <h3>Controle de Notas Fiscais no Recebimento</h3>
+          <p>Informações sobre os fornecedores recebidos</p>
+        </div>
+        <i class="fas fa-arrow-right link-arrow"></i>
+      </a>
+      
+      <a href="https://gaedsonjunior-sudo.github.io/regraumterco/" target="_blank" class="link-card">
+        <div class="link-icon">
+          <i class="fas fa-calendar-check"></i>
+        </div>
+        <div class="link-content">
+          <h3>Verificar Validade no Recebimento</h3>
+          <p>Regra de 1/3 de vencimento para recebimento</p>
+        </div>
+        <i class="fas fa-arrow-right link-arrow"></i>
+      </a>
+    </section>
+
+    <section class="gallery">
+      <div class="gallery-grid">
+        <a href="images/escala.jpg" target="_blank" class="card">
+          <div class="card-image">
+            <img src="images/escala.jpg" alt="Escala">
+            <div class="card-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>Escala</h3>
+            <p class="click-hint">Clique para ampliar</p>
+          </div>
+        </a>
+
+        <a href="images/inventario.jpg" target="_blank" class="card">
+          <div class="card-image">
+            <img src="images/inventario.jpg" alt="Calendário de Inventários">
+            <div class="card-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>Calendário de Inventários</h3>
+            <p class="click-hint">Clique para ampliar</p>
+          </div>
+        </a>
+
+        <a href="images/férias.jpg" target="_blank" class="card">
+          <div class="card-image">
+            <img src="images/férias.jpg" alt="Calendário de Férias">
+            <div class="card-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>Calendário de Férias</h3>
+            <p class="click-hint">Clique para ampliar</p>
+          </div>
+        </a>
+        
+      </div>
+    </section>
+
+    <section class="birthdays">
+      <h2 class="section-title">
+        <i class="fas fa-birthday-cake"></i>
+        Aniversários da Equipe
+      </h2>
+
+      <div class="birthdays-grid">
+        <div class="birthday-card">
+          <div class="birthday-icon">
+            <i class="fas fa-cake-candles"></i>
+          </div>
+          <div class="birthday-info">
+            <h3>Rogério</h3>
+            <p><i class="fas fa-calendar-day"></i> 28 de Março</p>
+          </div>
+        </div>
+
+        <div class="birthday-card">
+          <div class="birthday-icon">
+            <i class="fas fa-cake-candles"></i>
+          </div>
+          <div class="birthday-info">
+            <h3>Jonathan</h3>
+            <p><i class="fas fa-calendar-day"></i> 27 de Julho</p>
+          </div>
+        </div>
+
+        <div class="birthday-card">
+          <div class="birthday-icon">
+            <i class="fas fa-cake-candles"></i>
+          </div>
+          <div class="birthday-info">
+            <h3>Vinicius</h3>
+            <p><i class="fas fa-calendar-day"></i> 26 de Agosto</p>
+          </div>
+        </div>
+
+        <div class="birthday-card">
+          <div class="birthday-icon">
+            <i class="fas fa-cake-candles"></i>
+          </div>
+          <div class="birthday-info">
+            <h3>Jefferson</h3>
+            <p><i class="fas fa-calendar-day"></i> 22 de Setembro</p>
+          </div>
+        </div>
+
+        <div class="birthday-card">
+          <div class="birthday-icon">
+            <i class="fas fa-cake-candles"></i>
+          </div>
+          <div class="birthday-info">
+            <h3>Celso</h3>
+            <p><i class="fas fa-calendar-day"></i> 04 de Novembro</p>
+          </div>
+        </div>
+
+        <div class="birthday-card">
+          <div class="birthday-icon">
+            <i class="fas fa-cake-candles"></i>
+          </div>
+          <div class="birthday-info">
+            <h3>Edson</h3>
+            <p><i class="fas fa-calendar-day"></i> 22 de Dezembro</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 GPP-39 • Cristo Vive!</i></p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
+
+
+
+
+
