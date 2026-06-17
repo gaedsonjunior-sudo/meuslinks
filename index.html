@@ -50,8 +50,6 @@
     /* CONTENT */
     .content { flex: 1; padding: 20px 16px 40px; }
 
-
-
     /* SECTION TITLE */
     .section-title {
       font-size: 11px; font-weight: 700; letter-spacing: 1.1px;
@@ -83,27 +81,7 @@
     .qa-card h3 { font-size: 14px; font-weight: 700; color: #1a1f36; margin-bottom: 3px; }
     .qa-card .qa-sub { font-size: 12px; font-weight: 500; color: #ef4444; }
     .qa-card .qa-sub.blue { color: #2563eb; }
-
-    .qa-wide {
-      background: #fff; border-radius: 16px; padding: 16px 18px;
-      text-decoration: none; color: inherit; display: flex;
-      align-items: center; gap: 14px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-      border: 1.5px solid #f1f3f9; transition: transform 0.15s;
-    }
-
-    .qa-wide:active { transform: scale(0.98); }
-
-    .qa-wide-icon {
-      width: 44px; height: 44px; background: #eff4ff; border-radius: 12px;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    }
-
-    .qa-wide-icon i { font-size: 20px; color: #2563eb; }
-    .qa-wide-text { flex: 1; }
-    .qa-wide-text h3 { font-size: 14px; font-weight: 700; color: #1a1f36; margin-bottom: 2px; }
-    .qa-wide-text p { font-size: 12px; color: #94a3b8; }
-    .qa-wide-arrow { color: #cbd5e1; font-size: 14px; }
+    .qa-card .qa-sub.gray { color: #94a3b8; }
 
     /* GALLERY */
     .gallery-section { margin-bottom: 28px; }
@@ -198,7 +176,6 @@
     .birthday-badge.today { background: #fef9c3; color: #b45309; }
     .birthday-badge.next { background: #f0fdf4; color: #16a34a; }
 
-
   </style>
 </head>
 <body>
@@ -227,15 +204,17 @@
           <h3>Controle de Notas</h3>
           <span class="qa-sub blue">No Recebimento</span>
         </a>
-      </div>
-      <a href="https://gaedsonjunior-sudo.github.io/regraumterco/" target="_blank" class="qa-wide">
-        <div class="qa-wide-icon"><i class="fas fa-calendar-check"></i></div>
-        <div class="qa-wide-text">
+        <a href="https://gaedsonjunior-sudo.github.io/regraumterco/" target="_blank" class="qa-card">
+          <div class="qa-icon"><i class="fas fa-calendar-check"></i></div>
           <h3>Validade</h3>
-          <p>Verificar Regra 1/3</p>
-        </div>
-        <i class="fas fa-chevron-right qa-wide-arrow"></i>
-      </a>
+          <span class="qa-sub gray">Verificar Regra 1/3</span>
+        </a>
+        <a href="https://litigios.pinheiros.workers.dev/" target="_blank" class="qa-card">
+          <div class="qa-icon"><i class="fas fa-gavel"></i></div>
+          <h3>Litígios</h3>
+          <span class="qa-sub blue">Gestão de Chamados</span>
+        </a>
+      </div>
     </div>
 
     <div class="gallery-section">
